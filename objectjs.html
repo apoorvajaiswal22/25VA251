@@ -1,0 +1,67 @@
+
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Object</title>
+</head>
+
+<body>
+
+<script>
+
+// create object
+let student = {
+    name: "Apoorva",
+    age: 19,
+    isMarried: false,
+
+    address: {
+        streetNo: 21,
+        area: "Shatabdi Nagar",
+        city: "Kanpur",
+        pincode: 208020
+    },
+
+    course: "B.Tech",
+    branch: "CSE",
+    year: 2025,
+
+    getInfo: function(){
+        return "My education details are " + this.branch + " " + this.year;
+    },
+
+    subjects: ["Math","English","Science"],
+    examDone: null
+};
+
+// access properties
+console.log(student.address.pincode);
+console.log(student.getInfo());
+console.log(student.subjects[2]);
+
+// delete property
+delete student.name;
+console.log(student);
+
+// find length of object
+let keysLength = Object.keys(student);
+console.log(keysLength.length);
+
+// iterate properties
+for (let i = 0; i < keysLength.length; i++) {
+    console.log(student[keysLength[i]]);
+}
+let myInfo=new Object();
+myinfo.name="Apoorva";
+myinfo.age=19;
+myinfo.address="Himalaya Bhawan Shatabdi Nagar";
+myinfo.city="Kanpur";
+myinfo.mob=8005010138;
+
+
+</script>
+
+</body>
+</html>

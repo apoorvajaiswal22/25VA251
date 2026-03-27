@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //js data value typs in js 
+        //primitive-single value variable n are immutable
+        //string number boolean undefined null binit symbol
+        //string
+        var myName="apoorva";
+        console.log(myName);
+        console.log(typeof(myName));
+        //number
+        var myMob=9555750486;
+        console.log(myName +" mobile number is "+myMob);
+        //boolean
+        var isMarried=false;
+        console.log(myName+ " is married? "+ isMarried);
+        //undefined
+        var myEmail;
+        console.log(myEmail);
+        console.log(typeof(myEmail));
+        //null
+        var myAddress=null;
+        console.log(typeof(myAddress));
+        //bigint to handle large no.
+        var myValue=BigInt(645753576536476864544);
+        console.log(myValue);
+        console.log(typeof(myValue));
+        //symbol
+        var name1=Symbol("Jaiswal");
+        var name2=Symbol("Jaiswal");
+        console.log(name1==name2);
+
+        //regrence(object) typed==mutable in memory and keeps values in pair 
+        //object fuction array
+        let myInfo={
+           name:"Archita",
+            agr:11,
+            isMarried:false, 
+            mob:7355902175,
+           add:null,
+           branch:"cse",
+           section:23 
+        };
+        console.log(myInfo);
+        console.log(myInfo.name);
+
+        //object lenth
+        let keys = Object.keys(myInfo);
+        console.log("myInfo object length " + keys.length);
+        //function -block of code to perform particular task
+        function call()
+        {
+            var num1=23;
+             var num2=45;
+             var num3=57;
+             var res=num1+num2+num3;
+             console.log("addition of numbers is "+ res);
+             console.log(typeof(call));
+        }
+        call();
+        //array- collection of ant data type in JS
+        //for similar data tyopes 
+        let studentList=["Vikas", "Abhay", "Nitu","Rahul"];
+        console.log(studentList[1]);
+
+        //for any data types
+        let VikasInfo=["Vikas Singh" ,23, false , null, "cse" ,18];
+        console.log(VikasInfo[1]);
+        console.log(typeof(VikasInfo));
+
+        //to iterate any number
+        for(let i=0; i<VikasInfo.length;i++)
+        {
+            console.log(VikasInfo[i]);
+        }
+
+    </script>
+</body>
+</html
