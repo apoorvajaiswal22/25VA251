@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation and Event Handling</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+            background-color: white;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #para {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">Welcome to JavaScript DOM</h1>
+
+    <input type="text" id="message" placeholder="Enter New Heading">
+
+    <br><br>
+
+    <button id="changeTextBtn">Change Heading</button>
+    <button id="bgColorBtn">Change Background</button>
+    <button id="fontSizeBtn">Change Font Size</button>
+    <button id="toggleBtn">Show/Hide Paragraph</button>
+    <button id="resetBtn">Reset Page</button>
+
+    <p id="para">
+        This paragraph can be modified using JavaScript events.
+    </p>
+
+    <script>
+
+        document.getElementById("changeTextBtn")
+        .addEventListener("click", function() {
+
+            let msg = document.getElementById("message").value;
+
+            if(msg !== "")
+                document.getElementById("heading").innerHTML = msg;
+        });
+
+        document.getElementById("bgColorBtn")
+        .addEventListener("click", function() {
+
+            document.body.style.backgroundColor =
+                "#" + Math.floor(Math.random()*16777215).toString(16);
+        });
+
+        document.getElementById("fontSizeBtn")
+        .addEventListener("click", function() {
+
+            document.getElementById("para").style.fontSize = "30px";
+        });
+
+        document.getElementById("toggleBtn")
+        .addEventListener("click", function() {
+
+            let p = document.getElementById("para");
+
+            if(p.style.display === "none")
+                p.style.display = "block";
+            else
+                p.style.display = "none";
+        });
+
+        document.getElementById("resetBtn")
+        .addEventListener("click", function() {
+
+            location.reload();
+        });
+
+    </script>
+
+</body>
+</html>

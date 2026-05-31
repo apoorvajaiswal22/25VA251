@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Result Calculator</h1>
+
+    <button onclick="calculateResult()">
+        Calculate Result
+    </button>
+
+    <div id="result"></div>
+
+    <script>
+
+        function calculateResult() {
+
+            let subjects = parseInt(prompt("Enter number of subjects:"));
+
+            let total = 0;
+
+            for(let i = 1; i <= subjects; i++) {
+                let marks = parseInt(prompt("Enter marks for Subject " + i));
+                total += marks;
+            }
+
+            let average = total / subjects;
+
+            let grade;
+
+            if(average >= 90)
+                grade = "A+";
+            else if(average >= 75)
+                grade = "A";
+            else if(average >= 60)
+                grade = "B";
+            else if(average >= 40)
+                grade = "C";
+            else
+                grade = "F";
+
+            let result = (average >= 40) ? "Pass" : "Fail";
+
+            document.getElementById("result").innerHTML =
+                "<h3>Result</h3>" +
+                "<p><b>Total Marks:</b> " + total + "</p>" +
+                "<p><b>Average Marks:</b> " + average.toFixed(2) + "</p>" +
+                "<p><b>Grade:</b> " + grade + "</p>" +
+                "<p><b>Status:</b> " + result + "</p>";
+        }
+
+    </script>
+
+</body>
+</html>
